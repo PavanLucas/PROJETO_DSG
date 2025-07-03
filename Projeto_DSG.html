@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>DIAS SEM GROU</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .watermark {
+      position: absolute;
+      font-size: 40vw;
+      color: rgba(0, 0, 0, 0.05);
+      z-index: 0;
+    }
+ 
+    h1 {
+      font-size: 5rem;
+      text-transform: uppercase;
+      z-index: 1;
+      margin: 0;
+      color: black;
+    }
+ 
+    #counter {
+      font-size: 3rem;
+      margin-top: 20px;
+      z-index: 1;
+      color: black;
+    }
+</style>
+</head>
+<body>
+<div class="watermark">😭</div>
+<h1>DIAS SEM GROU</h1>
+<div id="counter">0</div>
+ 
+  <script>
+    // Data de início (ajuste para a data real de "sem Grou")
+    const startDate = new Date('2025-06-29'); // Exemplo
+ 
+    function updateCounter() {
+      const now = new Date();
+      const diffTime = now - startDate;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById('counter').textContent = diffDays;
+    }
+ 
+    updateCounter();
+</script>
+</body>
+</html>
